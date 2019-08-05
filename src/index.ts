@@ -1,6 +1,8 @@
 import * as digit from './digit'
 import * as matches from './matches'
 
+console.log('Game Start')
+
 // 相手の番号
 const e = digit.GenerateTreeDigit()
 for (var c = 0; true; c++) {
