@@ -19,17 +19,10 @@ export const none: None = {type: 'None'}
  * Returns `o.value` if `Some`, returns `undefined` if `none`
  * @param o The value you want to get
  */
-export const intoValue = <T>(o: Option<T>): T | undefined => {
+export const IntoValue = <T>(o: Option<T>): T | undefined => {
   // prettier-ignore
   switch (o.type) {
     case 'Some': return o.value
     case 'None': return undefined
   }
 }
-
-/**
- * Wrap value to `option`
- * @param b `bool` value of `some` or `none`
- * @param v Value to set
- */
-// export const Create = <T>(b: unknown, v: T): Option<T> => (b ? some(v) : none)
