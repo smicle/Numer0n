@@ -2,7 +2,7 @@ import 'smicle-util'
 import * as _util from 'smicle-util'
 import * as readlineSync from 'readline-sync'
 import {some, none} from './option'
-import * as option from 'readline-sync'
+import * as option from './option'
 
 /**
  * 0~9の番号
@@ -81,19 +81,19 @@ const isUniq = (n: number[]): Option<number[]> => {
 export const InputTreeDigit = (): TreeDigit => {
   for (;;) {
     // 値があるか確認
-    const i = option.intoValue(input())
+    const i = option.IntoValue(input())
     if (!i) continue
 
     // 3桁か確認
-    const s = option.intoValue(splitToArrays(i))
+    const s = option.IntoValue(splitToArrays(i))
     if (!s) continue
 
     // 数値か確認
-    const n = option.intoValue(toNumber(s))
+    const n = option.IntoValue(toNumber(s))
     if (!n) continue
 
     // 重複がないか確認
-    const u = option.intoValue(isUniq(n))
+    const u = option.IntoValue(isUniq(n))
     if (!u) continue
 
     const d = u.map(asDigit)
