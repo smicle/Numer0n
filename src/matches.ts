@@ -37,4 +37,4 @@ export const CheckEat = (e: TreeDigit, i: TreeDigit): Matches =>
  * @param eat EATの数
  */
 export const CheckBite = (e: TreeDigit, i: TreeDigit, eat: Matches): Matches =>
-  asMatches(_util.range(3).filter(n => e.includes(i[n])).length - eat)
+  asMatches(i.filter(v => e.includes(v)).length - eat)
