@@ -32,7 +32,7 @@ const asDigit = (n: number): Digit => {
 /**
  * 重複しない0~9の3桁の番号を作成する
  */
-export const GenerateTreeDigit = (): Numer0n => {
+export const GenerateNumer0n = (): Numer0n => {
   const n: Digit[] = _util.range(10).map(asDigit)
   return [n._sample$(), n._sample$(), n._sample$()]
 }
@@ -78,7 +78,7 @@ const isUniq = (n: number[]): Option<number[]> => {
 /**
  * 標準入力を受け取り、重複しない0~9の3桁の番号にして返す
  */
-export const InputTreeDigit = (): Numer0n => {
+export const InputNumer0n = (): Numer0n => {
   for (;;) {
     // 値があるか確認
     const i = option.IntoValue(input())
