@@ -12,7 +12,7 @@ type Digit = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 /**
  * 重複しない0~9の3桁の番号
  */
-export type TreeDigit = readonly [Digit, Digit, Digit]
+export type Numer0n = readonly [Digit, Digit, Digit]
 
 /**
  * 引数の値が`Digit`かどうか確認する
@@ -32,7 +32,7 @@ const asDigit = (n: number): Digit => {
 /**
  * 重複しない0~9の3桁の番号を作成する
  */
-export const GenerateTreeDigit = (): TreeDigit => {
+export const GenerateTreeDigit = (): Numer0n => {
   const n: Digit[] = _util.range(10).map(asDigit)
   return [n._sample$(), n._sample$(), n._sample$()]
 }
@@ -78,7 +78,7 @@ const isUniq = (n: number[]): Option<number[]> => {
 /**
  * 標準入力を受け取り、重複しない0~9の3桁の番号にして返す
  */
-export const InputTreeDigit = (): TreeDigit => {
+export const InputTreeDigit = (): Numer0n => {
   for (;;) {
     // 値があるか確認
     const i = option.IntoValue(input())
@@ -100,3 +100,17 @@ export const InputTreeDigit = (): TreeDigit => {
     return [d[0], d[1], d[2]]
   }
 }
+
+/**
+ * 相手の番号と入力した番号からEATの数を返す
+ * @param e 相手の番号
+ * @param i 入力した番号
+ */
+export const CheckEat = (e: Numer0n, i: Numer0n): number => e.filter((a, b) => a === i[b]).length
+
+/**
+ * 相手の番号と入力した番号からBITEの数を返す
+ * @param e 相手の番号
+ * @param i 入力した番号
+ */
+export const CheckBite = (e: Numer0n, i: Numer0n): number => i.filter(v => e.includes(v)).length
