@@ -12,7 +12,7 @@ type Digit = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 /**
  * 重複しない0~9の3桁の番号
  */
-export type Numer0n = readonly [Digit, Digit, Digit]
+type Numer0n = readonly [Digit, Digit, Digit]
 
 /**
  * 引数の値が`Digit`かどうか確認する
